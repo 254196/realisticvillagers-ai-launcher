@@ -1,0 +1,12 @@
+# Never commit local model weights or runtime data.
+AI存储中心/
+**/blobs/
+**/*.gguf
+**/*.safetensors
+**/*.bin
+*.env
+*.key
+*.token
+server-worlds/
+conversation-memory/
+relationships.json
