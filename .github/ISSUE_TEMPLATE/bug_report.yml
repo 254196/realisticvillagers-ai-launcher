@@ -1,25 +1,36 @@
-name: Bug report
+name: RealisticVillagers Bug report
 description: Report a reproducible RealisticVillagersAI problem
-title: "[Bug] "
-labels: [bug]
+title: "[RealisticVillagersAI Bug] "
+labels:
+  - bug
 body:
   - type: markdown
     attributes:
       value: |
+        This form is for the RealisticVillagersAI plugin.
         Please remove API keys, bearer tokens, player data and private server logs before submitting.
+        此表单用于 RealisticVillagersAI 插件。
         提交前请删除 API 密钥、Bearer token、玩家数据和私人服务器日志。
   - type: input
     id: plugin-version
     attributes:
-      label: Plugin version / 插件版本
-      placeholder: 1.7.3
+      label: RealisticVillagersAI version / RealisticVillagersAI 版本
+      placeholder: "e.g. 1.7.3"
     validations:
       required: true
   - type: input
-    id: server-build
+    id: realisticvillagers-version
     attributes:
-      label: Minecraft and server build / Minecraft 与服务端构建号
-      placeholder: Purpur 1.21.10 build ...
+      label: RealisticVillagers version / RealisticVillagers 版本
+      description: Fill this in when RealisticVillagers is installed or related to the issue; otherwise write N/A.
+      placeholder: "e.g. 1.x.x or N/A"
+    validations:
+      required: true
+  - type: input
+    id: minecraft-server
+    attributes:
+      label: Minecraft and server software / Minecraft 与服务端
+      placeholder: "e.g. Minecraft 1.21.10, Paper/Purpur build ..."
     validations:
       required: true
   - type: textarea
@@ -27,20 +38,32 @@ body:
     attributes:
       label: Reproduction steps / 复现步骤
       description: List the smallest sequence that reproduces the issue.
+      placeholder: |
+        1. ...
+        2. ...
+        3. ...
     validations:
       required: true
   - type: textarea
-    id: expected
+    id: expected-actual
     attributes:
       label: Expected and actual behavior / 预期与实际行为
+      placeholder: |
+        Expected / 预期：
+        Actual / 实际：
     validations:
       required: true
   - type: textarea
     id: diagnostics
     attributes:
-      label: Diagnostic event codes / 诊断事件码
-      description: Add RVAIDxxx codes only. Never paste secrets or chat content.
-      placeholder: RVAID001, RVAID014
+      label: Relevant logs and diagnostics / 相关日志与诊断信息
+      description: Paste sanitized errors or diagnostic event codes. Never include secrets or private player data.
+      render: text
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots or video / 截图或视频
+      description: Add visual evidence when the issue affects villagers, menus, animations, or rendering.
   - type: checkboxes
     id: safe-data
     attributes:
