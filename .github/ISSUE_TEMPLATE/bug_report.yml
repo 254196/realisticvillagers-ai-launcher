@@ -1,0 +1,50 @@
+name: Bug report
+description: Report a reproducible RealisticVillagersAI problem
+title: "[Bug] "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please remove API keys, bearer tokens, player data and private server logs before submitting.
+        提交前请删除 API 密钥、Bearer token、玩家数据和私人服务器日志。
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version / 插件版本
+      placeholder: 1.7.3
+    validations:
+      required: true
+  - type: input
+    id: server-build
+    attributes:
+      label: Minecraft and server build / Minecraft 与服务端构建号
+      placeholder: Purpur 1.21.10 build ...
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps / 复现步骤
+      description: List the smallest sequence that reproduces the issue.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behavior / 预期与实际行为
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostic event codes / 诊断事件码
+      description: Add RVAIDxxx codes only. Never paste secrets or chat content.
+      placeholder: RVAID001, RVAID014
+  - type: checkboxes
+    id: safe-data
+    attributes:
+      label: Data safety / 数据安全
+      options:
+        - label: I removed secrets and private player data. / 我已删除密钥和私人玩家数据。
+          required: true
